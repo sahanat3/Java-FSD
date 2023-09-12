@@ -1,0 +1,19 @@
+package assisstedpractice;
+
+public class Practice_project1 {
+
+	public static void main(String[] args) {
+		 // Writing a program in Java to implement implicit and explicit type casting
+
+	     // Implicit type casting from integer to double
+		 int intNum = 10;
+		 double doubleNum = intNum; 
+		 System.out.println("Implicit TypeCasting (int to double): " + doubleNum);
+
+		 // Explicit type casting from double to integer
+		 double doubleNum2 = 15.75;
+		 int intNum2 = (int) doubleNum2;
+		 System.out.println("Explicit TypeCasting (double to int): " + intNum2);
+
+	}
+}

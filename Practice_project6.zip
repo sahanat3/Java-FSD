@@ -1,0 +1,47 @@
+package assisstedpractice;
+
+import java.util.HashMap;
+import java.util.TreeMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class Practice_project6 {
+
+	public static void main(String[] args) {
+		// Writing a program in Java to verify implementations of maps
+		
+		        // 1. HashMap (no specific order)
+		        Map<String, Integer> hashMap = new HashMap<>();
+		        hashMap.put("Dog", 2);
+		        hashMap.put("Cat", 3);
+		        hashMap.put("Parrot", 1);
+		        
+		        System.out.println("HashMap:");
+		        for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
+		            System.out.println(entry.getKey() + ": " + entry.getValue());
+		        }
+
+		        // 2. TreeMap (sorted by keys)
+		        Map<String, Integer> treeMap = new TreeMap<>();
+		        treeMap.put("Banana", 4);
+		        treeMap.put("Custurd Apple", 5);
+		        treeMap.put("Apple", 1);
+		        
+		        System.out.println("\nTreeMap (sorted by keys):");
+		        for (Map.Entry<String, Integer> entry : treeMap.entrySet()) {
+		            System.out.println(entry.getKey() + ": " + entry.getValue());
+		        }
+
+		        // 3. LinkedHashMap (maintains insertion order)
+		        Map<String, Integer> linkedHashMap = new LinkedHashMap<>();
+		        linkedHashMap.put("Java", 80);
+		        linkedHashMap.put("Python", 100);
+		        linkedHashMap.put(".Net", 50);
+		        
+		        System.out.println("\nLinkedHashMap (maintains insertion order):");
+		        for (Map.Entry<String, Integer> entry : linkedHashMap.entrySet()) {
+		            System.out.println(entry.getKey() + ": " + entry.getValue());
+		        }
+	}
+	
+}

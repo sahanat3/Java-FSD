@@ -1,0 +1,21 @@
+package assisstedpractice;
+
+public class Practice_project8 {
+
+	public static void main(String[] args) {
+		// Write a program to create strings and display the conversion of string to StringBuffer and StringBuilder.
+
+		        // Creating a string
+		        String str = "Hello, ";
+		        
+		        // Using StringBuffer
+		        StringBuffer stringBuffer = new StringBuffer(str);
+		        stringBuffer.append("world!");
+		        System.out.println("Using StringBuffer: " + stringBuffer.toString());
+		        
+		        // Using StringBuilder
+		        StringBuilder stringBuilder = new StringBuilder(str);
+		        stringBuilder.append("world!");
+		        System.out.println("Using StringBuilder: " + stringBuilder.toString());
+    }
+}

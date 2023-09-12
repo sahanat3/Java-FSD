@@ -1,0 +1,70 @@
+package assisstedpractice;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.HashSet;
+import java.util.HashMap;
+
+
+public class Practice_project5 {
+
+	public static void main(String[] args) {
+		// Writing a program in Java to verify implementations of collections
+	
+		        // 1. ArrayList
+		        ArrayList<String> arrayList = new ArrayList<>();
+
+		        // Adding elements to the ArrayList
+		        arrayList.add("Dog");
+		        arrayList.add("Cat");
+		        arrayList.add("Parrot");
+
+		        // Accessing elements using for-each loop
+		        System.out.println("ArrayList Elements:");
+		        for (String pets : arrayList) {
+		            System.out.println(pets);
+		        }
+		        
+		        
+		        // 2. LinkedList
+		        LinkedList<Double> linkedList = new LinkedList<>();
+		        linkedList.add(1.21);
+		        linkedList.add(4.65);
+		        linkedList.add(3.345);
+		        
+		        // Accessing elements using for-each loop
+		        System.out.println("\nLinkedList:");
+		        for (Double value : linkedList) {
+		            System.out.println(value);
+		            
+		        }   
+
+		        // 3. HashSet
+		        HashSet<Integer> hashSet = new HashSet<>();
+
+		        // Adding elements to the HashSet
+		        hashSet.add(101);
+		        hashSet.add(202);
+		        hashSet.add(303);
+		        
+		        // Accessing elements using for-each loop
+		        System.out.println("\nHastSet:");
+		        for (Integer value : hashSet) {
+		        	System.out.println(value);
+		        }
+
+		        // 4. HashMap
+		        HashMap<Integer, String> hashMap = new HashMap<>();
+
+		        // Adding key-value pairs to the HashMap
+		        hashMap.put(232, "Java");
+		        hashMap.put(233, "Testing");
+		        hashMap.put(234, ".Net");
+
+		       // Accessing elements using keySet and for-each loop
+		        System.out.println("\nHashMap Elements:");
+		        for (Integer key : hashMap.keySet()) {
+		            System.out.println(key + ": " + hashMap.get(key));
+		        }
+		    }
+		}

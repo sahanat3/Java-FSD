@@ -1,0 +1,32 @@
+package assisstedpractice;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Practice_project10 {
+
+	public static void main(String[] args) {
+		// Writing a program in Java to verify implementations of regular expressions
+		
+		       // Creating a regular expression pattern
+		        Pattern pattern = Pattern.compile("Hello, [A-Za-z]+!");
+		        
+		        // Creating a test string
+		        String testString = "Hello, John!";
+		        
+		        // Matching the pattern against the test string
+		        Matcher matcher = pattern.matcher(testString);
+		        
+		        // Checking if a match is found
+		        if (matcher.matches()) 
+		        {
+		            System.out.println("Pattern matched!");
+		        } 
+		        else 
+		        {
+		            System.out.println("Pattern not matched!");
+		        }
+		    }
+		}
+
+

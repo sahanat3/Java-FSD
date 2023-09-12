@@ -1,0 +1,85 @@
+package assisstedpractice;
+
+public class Practice_project3 {
+
+	public static void main(String[] args) {
+		// Writing a program in Java to verify implementations of methods and ways of calling a method 
+
+		        MethodsAndCalling myObject = new MethodsAndCalling();
+
+		        // 1. Calling an instance method using an object reference
+		        myObject.instanceMethod();
+
+		        // 2. Calling a static method using the class name
+		        MethodsAndCalling.staticMethod();
+
+		        // 3. Calling an overloaded method with different parameters
+		        myObject.overloadedMethod(101); // integer version
+		        myObject.overloadedMethod("Java"); // String version
+
+		        // 4. Returning a value from a method
+		        int result = myObject.addNumbers(20, 15);
+		        System.out.println("Result of addition: " + result);
+
+		        // 5. Calling methods with different access modifiers
+		        myObject.publicMethod(); // Public method
+		        // myObject.protectedMethod(); // Protected method
+		        // myObject.defaultMethod(); // Default method
+		        // myObject.privateMethod(); // Private method
+
+		        // 6. Calling methods with parameters and returning values
+		        int square = myObject.calculateSquare(3);
+		        System.out.println("Square of 3: " + square);
+
+		        // 7. Calling methods with multiple parameters
+		        int sum = myObject.calculateSum(1, 2, 3, 4, 5);
+		        System.out.println("Sum of 1, 2, 3, 4, and 5: " + sum);
+		    }
+		}
+
+		class MethodsAndCalling {
+
+		    // 1. Instance Method
+		    public void instanceMethod() {
+		        System.out.println("This is an instance method.");
+		    }
+
+		    // 2. Static Method
+		    public static void staticMethod() {
+		        System.out.println("This is a static method.");
+		    }
+
+		    // 3. Overloaded Methods
+		    public void overloadedMethod(int num) {
+		        System.out.println("Method with int parameter: " + num);
+		    }
+
+		    public void overloadedMethod(String str) {
+		        System.out.println("Method with String parameter: " + str);
+		    }
+
+		    // 4. Method with Return Value
+		    public int addNumbers(int a, int b) {
+		        return a + b;
+		    }
+
+		    // 5. Access Modifier Methods
+		    public void publicMethod() {
+		        System.out.println("This is a public method.");
+		    }
+
+		    // 6. Method with Parameter and Return Value
+		    public int calculateSquare(int number) {
+		        return number * number;
+		    }
+
+		    // 7. Method with Multiple Parameters
+		    public int calculateSum(int... numbers) {
+		        int sum = 0;
+		        for (int num : numbers) {
+		            sum += num;
+		        }
+		        return sum;
+		    }
+		}
+		

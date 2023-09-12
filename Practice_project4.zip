@@ -1,0 +1,48 @@
+package assisstedpractice;
+
+public class Practice_project4 {
+
+	public static void main(String[] args) {
+		// Writing a program in Java to verify the implementations of constructor types
+
+		        // 1. Creating an object using the default constructor
+		        ConstructorTypes defaultObj = new ConstructorTypes();
+		        defaultObj.display();
+
+		        // 2. Creating an object using a parameterized constructor
+		        ConstructorTypes parametrizedObj = new ConstructorTypes(232, "Java");
+		        parametrizedObj.display();
+
+		        // 3. Creating an object using a copy constructor
+		        ConstructorTypes copyObj = new ConstructorTypes(parametrizedObj);
+		        copyObj.display();
+		    }
+		}
+
+		class ConstructorTypes {
+		    private int intValue;
+		    private String stringValue;
+
+		    // 1. Default Constructor
+		    public ConstructorTypes() {
+		        System.out.println("Default Constructor Called");
+		    }
+
+		    // 2. Parameterized Constructor
+		    public ConstructorTypes(int intValue, String stringValue) {
+		        this.intValue = intValue;
+		        this.stringValue = stringValue;
+		        System.out.println("Parameterized Constructor Called: " + intValue + " " + stringValue);
+		    }
+
+		    // 3. Copy Constructor
+		    public ConstructorTypes(ConstructorTypes other) {
+		        this.intValue = other.intValue;
+		        this.stringValue = other.stringValue;
+		        System.out.println("Copy Constructor Called: " + intValue + " " + stringValue);
+		    }
+
+		    public void display() {
+		        System.out.println("Value: " + intValue + " " + stringValue);
+		    }
+		}

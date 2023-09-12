@@ -1,0 +1,22 @@
+package assisstedpractice;
+
+public class Practice_project9 {
+
+	public static void main(String[] args) {
+		// Writing a program in Java to verify implementation of arrays                                
+	
+		        // Creating an array of integers
+		        int[] numbers = {10, 20, 30, 40, 50};
+		        
+		        // Accessing elements of the array
+		        System.out.println("Element at index 0: " + numbers[0]);
+		        System.out.println("Element at index 2: " + numbers[2]);
+		        
+		        // Modifying elements of the array
+		        numbers[3] = 10;
+		        System.out.println("Modified element at index 3: " + numbers[3]);
+		        
+		        // Finding the length of the array
+		        System.out.println("Length of the array: " + numbers.length);
+		    }
+		}

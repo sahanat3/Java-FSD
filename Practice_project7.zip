@@ -1,0 +1,64 @@
+package assisstedpractice;
+
+public class Practice_project7 {
+	
+		// Writing a program in Java to verify the implementation of inner classes
+		
+		    private int outerVariable = 10;
+
+		    // Nested Static Class
+		    static class NestedStaticClass {
+		        void display() {
+		            System.out.println("Nested Static Class");
+		        }
+		    }
+
+		    // Member Inner Class
+		    class MemberInnerClass {
+		        void display() {
+		            System.out.println("Member Inner Class");
+		            System.out.println("Accessing outer variable from Member Inner Class: " + outerVariable);
+		        }
+		    }
+
+		    public void outerMethod() {
+		        // Local Inner Class
+		        class LocalInnerClass {
+		            void display() {
+		                System.out.println("Local Inner Class");
+		            }
+		        }
+		        LocalInnerClass localInner = new LocalInnerClass();
+		        localInner.display();
+		    }
+
+		    public void anonymousInnerClassExample() {
+		        // Anonymous Inner Class
+		        Runnable runnable = new Runnable() {
+		            @Override
+		            public void run() {
+		                System.out.println("Anonymous Inner Class");
+		            }
+		        };
+		        Thread thread = new Thread(runnable);
+		        thread.start();
+		    }
+
+		    public static void main(String[] args) {
+		        Practice_project7 outerObj = new Practice_project7();
+
+		        // Nested Static Class
+		        NestedStaticClass nestedStatic = new NestedStaticClass();
+		        nestedStatic.display();
+
+		        // Member Inner Class
+		        MemberInnerClass memberInner = outerObj.new MemberInnerClass();
+		        memberInner.display();
+
+		        // Local Inner Class
+		        outerObj.outerMethod();
+
+		        // Anonymous Inner Class
+		        outerObj.anonymousInnerClassExample();
+		    }
+		}

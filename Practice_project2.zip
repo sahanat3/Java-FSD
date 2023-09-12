@@ -1,0 +1,41 @@
+package assisstedpractice;
+
+public class Practice_project2 {
+
+	public static void main(String[] args) {
+		       // Writing a program in Java to implement access modifier
+
+		        AccessModifier myObject = new AccessModifier();
+
+		        // Accessing public method
+		        myObject.publicMethod();
+
+		        // Accessing protected method
+		        myObject.protectedMethod();
+
+		        // Accessing default method 
+		        myObject.defaultMethod();
+
+		        // Accessing private method (not allowed), will result in error
+		        // myObject.privateMethod(); 
+		    }
+		}
+
+		// Creating a class in same package
+		class AccessModifier {
+		    public void publicMethod() {
+		        System.out.println("This is a public method.");
+		    }
+
+		    protected void protectedMethod() {
+		        System.out.println("This is a protected method.");
+		    }
+
+		    void defaultMethod() {
+		        System.out.println("This is a default (package-private) method.");
+		    }
+
+		   // private void privateMethod() {
+		   //     System.out.println("This is a private method.");
+		   // }
+		}

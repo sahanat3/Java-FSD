@@ -1,0 +1,54 @@
+package assistedpractice2;
+
+		// Write a program in Java to demonstrate sleep() and wait()
+		class SleepThread extends Thread {
+		    public void run() {
+		        System.out.println("Sleep Thread started");
+		        try {
+		            Thread.sleep(3000); // Sleep for 3 seconds
+		        } catch (InterruptedException e) {
+		            System.out.println(e);
+		        }
+		        System.out.println("Sleep Thread finished.");
+		    }
+		}
+
+		class WaitThread extends Thread {
+		    private final Object lock;
+
+		    public WaitThread(Object lock) {
+		        this.lock = lock;
+		    }
+
+		    public void run() {
+		        System.out.println("Wait Thread started");
+		        synchronized (lock) {
+		            try {
+		                lock.wait(3000); // Wait for 3 seconds
+		            } catch (InterruptedException e) {
+		                System.out.println(e);
+		            }
+		        }
+		        System.out.println("Wait Thread finished");
+		    }
+		}
+
+		public class Practice_project12 {
+		    public static void main(String[] args) {
+		        Object lock = new Object();
+
+		        SleepThread sleepThread = new SleepThread();
+		        WaitThread waitThread = new WaitThread(lock);
+
+		        sleepThread.start();
+		        waitThread.start();
+		        try {
+		            sleepThread.join();
+		            waitThread.join();
+		        } catch (InterruptedException e) {
+		            System.out.println(e);
+		        }
+
+		        System.out.println("Main thread finished");
+		    }
+		}

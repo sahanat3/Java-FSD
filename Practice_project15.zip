@@ -1,0 +1,42 @@
+package assistedpractice2;
+
+		// Writing a program in Java to throws, throw, finally, and custom exceptions in Java.
+
+		// Custom exception class
+		class CustomException extends Exception {
+		    public CustomException(String message) {
+		       super(message);
+		    }
+		}
+
+		public class Practice_project15 {
+		    public static void main(String[] args) {
+		        try {
+		            throwCustomException();
+		            
+		            // This will throw an ArithmeticException
+		            int result = divide(10, 0); 
+		            System.out.println("Result: " + result); 
+		            
+		        } catch (ArithmeticException e) {
+		            System.out.println("ArithmeticException: " + e.getMessage());
+		            
+		        } catch (CustomException e) {
+		            System.out.println("CustomException: " + e.getMessage());
+		            
+		        } finally {
+		            // Code in the finally block will always be executed
+		            System.out.println("Finally block executed.");
+		        }
+		    }
+
+		    public static int divide(int dividend, int divisor) {
+		        // Attempt to divide two numbers, which may cause an ArithmeticException
+		        return dividend / divisor;
+		    }
+
+		    public static void throwCustomException() throws CustomException {
+		        // Custom exception
+		        throw new CustomException("This is a custom exception.");
+		    }
+		}

@@ -1,0 +1,53 @@
+package assistedpractice2;
+
+		// Write a program in Java to demonstrate synchronization
+
+			class Counter {
+		    private int count = 0;
+
+		    // Synchronized method to increment count
+		    public synchronized void increment() {
+		        count++;
+		    }
+
+		    // Synchronized method to get the count 
+		    public synchronized int getCount() {
+		        return count;
+		    }
+		}
+
+		public class Practice_project13 {
+		    public static void main(String[] args) {
+		        Counter counter = new Counter();
+
+		        // Create multiple threads to increment counter
+		        Thread thread1 = new Thread(() -> {
+		            for (int i = 0; i < 200; i++) {
+		                counter.increment();
+		            }
+		        });
+
+		        Thread thread2 = new Thread(() -> {
+		            for (int i = 0; i < 200; i++) {
+		                counter.increment();
+		            }
+		        });
+
+		        // Start the threads
+		        thread1.start();
+		        thread2.start();
+
+		        try {
+		        	// wait for threads to finish
+		            thread1.join();
+		            thread2.join();
+		        } catch (InterruptedException e) {
+		            e.printStackTrace();
+		        }
+
+		        // Print the final count
+		        System.out.println("Final Count: " + counter.getCount());
+		    }
+		}  
+
+

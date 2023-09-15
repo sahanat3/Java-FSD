@@ -1,0 +1,46 @@
+package assistedpractice2;
+
+		// Write a program in Java to resolve the diamond problem using OOPs’ concepts
+
+		// Common interface
+		interface anotherShape {
+		    void draw();
+		}
+
+		// Two interfaces that extend Shape
+		interface anotherCircle extends anotherShape {
+		    void drawCircle();
+		}
+
+		interface anotherRectangle extends anotherShape {
+		    void drawRectangle();
+		}
+
+		// Implement the interfaces in a class
+		class Drawing implements anotherCircle, anotherRectangle {
+		    @Override
+		    public void draw() {
+		        System.out.println("Drawing a generic shape");
+		    }
+
+		    @Override
+		    public void drawCircle() {
+		        System.out.println("Drawing a circle");
+		    }
+
+		    @Override
+		    public void drawRectangle() {
+		        System.out.println("Drawing a rectangle");
+		    }
+		}
+
+		public class Practice_project19 {
+		    public static void main(String[] args) {
+		        Drawing drawing = new Drawing();
+
+		        // Call methods from both Circle and Rectangle interfaces
+		        drawing.draw();
+		        drawing.drawCircle();
+		        drawing.drawRectangle();
+		    }
+		}

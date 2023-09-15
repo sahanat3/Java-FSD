@@ -1,0 +1,106 @@
+package assistedpractice2;
+
+import java.io.*;
+import java.util.Scanner;
+
+		// Writing a program in Java to create, read, update, and delete operations on the files in Java
+		
+		public class Practice_project17 {
+		    public static void main(String[] args) {
+		        Scanner sc = new Scanner(System.in);
+		        String fileName = "demo.txt";
+
+		        while (true) {
+		            System.out.println("\nChoose an operation:");
+		            System.out.println("1. Create a new file");
+		            System.out.println("2. Read the file");
+		            System.out.println("3. Update the file");
+		            System.out.println("4. Delete the file");
+		            System.out.println("5. Exit");
+		            System.out.print("Enter your choice: ");
+
+		            int choice = sc.nextInt();
+		            sc.nextLine();
+
+		            switch (choice) {
+		                case 1:
+		                    createFile(fileName);
+		                    break;
+		                case 2:
+		                    readFile(fileName);
+		                    break;
+		                case 3:
+		                    updateFile(fileName);
+		                    break;
+		                case 4:
+		                    deleteFile(fileName);
+		                    break;
+		                case 5:
+		                    System.out.println("Exiting program.");
+		                    sc.close();
+		                    System.exit(0);
+		                default:
+		                    System.out.println("Invalid choice. Please try again.");
+		            }
+		        }
+		    }
+
+		    // Create a new file
+		    public static void createFile(String fileName) {
+		        try {
+		            FileWriter fileWriter = new FileWriter(fileName);
+		            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+		            System.out.print("Enter content to write to the file: ");
+		            Scanner sc = new Scanner(System.in);
+		            String content = sc.nextLine();
+		            bufferedWriter.write(content);
+		            bufferedWriter.close();
+		            System.out.println("File created successfully.");
+		        } catch (IOException e) {
+		            System.out.println("Error while creating the file: " + e.getMessage());
+		        }
+		    }
+
+		    // Read the file
+		    public static void readFile(String fileName) {
+		        try {
+		            FileReader fileReader = new FileReader(fileName);
+		            BufferedReader bufferedReader = new BufferedReader(fileReader);
+		            String line;
+		            System.out.println("File content:");
+		            while ((line = bufferedReader.readLine()) != null) {
+		                System.out.println(line);
+		            }
+		            bufferedReader.close();
+		        } catch (IOException e) {
+		            System.out.println("Error while reading the file: " + e.getMessage());
+		        }
+		    }
+
+		    // Update the file
+		    public static void updateFile(String fileName) {
+		        try {
+		            FileWriter fileWriter = new FileWriter(fileName, true);
+		            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+		            System.out.print("Enter content to append to the file: ");
+		            Scanner sc = new Scanner(System.in);
+		            String content = sc.nextLine();
+		            bufferedWriter.newLine(); 
+		            bufferedWriter.write(content);
+		            bufferedWriter.close();
+		            System.out.println("File updated successfully.");
+		        } catch (IOException e) {
+		            System.out.println("Error while updating the file: " + e.getMessage());
+		        }
+		    }
+
+		    // Delete the file
+		    public static void deleteFile(String fileName) {
+		        File file = new File(fileName);
+		        if (file.delete()) {
+		            System.out.println("File deleted successfully.");
+		        } else {
+		            System.out.println("Error deleting the file.");
+		        }
+		    }
+		}

@@ -1,0 +1,22 @@
+package assistedpractice2;
+
+public class Practice_project16 {
+
+	public static void main(String[] args) {
+               // Write a program in Java to demonstrate exception handling
+		        try {
+		            // Throws an exception
+		            int result = divide(10, 0); 
+		            System.out.println("Result: " + result); 
+		        } catch (ArithmeticException e) {
+		            // Catch and handle the ArithmeticException
+		            System.out.println("An ArithmeticException occurred: " + e.getMessage());
+		        } finally {
+		            // Code in the finally block is always executed
+		            System.out.println("Finally block executed.");
+		        }
+	}
+		    public static int divide(int dividend, int divisor) {
+		        return dividend / divisor;
+		    }
+		}

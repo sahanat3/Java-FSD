@@ -1,0 +1,91 @@
+package assistedpractice2;
+
+		// Write a program in Java to demonstrate the uses of classes, objects, and the object-oriented pillars in Java
+		
+		// Define a class representing a basic shape
+		class Shape {
+		    // Attributes
+		    private String color;
+
+		    // Constructor
+		    public Shape(String color) {
+		        this.color = color;
+		    }
+
+		    // Methods
+		    public void setColor(String color) {
+		        this.color = color;
+		    }
+
+		    public String getColor() {
+		        return color;
+		    }
+
+		    public double area() {
+		        return 0.0;
+		    }
+
+		    public void display() {
+		        System.out.println("This is a " + color + " shape.");
+		    }
+		}
+
+		// Subclass Circle that inherits from Shape
+		class Circle extends Shape {
+		    private double radius;
+
+		    public Circle(String color, double radius) {
+		        super(color);
+		        this.radius = radius;
+		    }
+
+		    @Override
+		    public double area() {
+		        return Math.PI * radius * radius;
+		    }
+
+		    @Override
+		    public void display() {
+		        System.out.println("This is a " + getColor() + " circle with a radius of " + radius);
+		    }
+		}
+
+		// Subclass Rectangle that inherits from Shape
+		class Rectangle extends Shape {
+		    private double length;
+		    private double width;
+
+		    public Rectangle(String color, double length, double width) {
+		        super(color);
+		        this.length = length;
+		        this.width = width;
+		    }
+
+		    @Override
+		    public double area() {
+		        return length * width;
+		    }
+
+		    @Override
+		    public void display() {
+		        System.out.println("This is a " + getColor() + " rectangle with length " + length + " and width " + width);
+		    }
+		}
+
+		public class Practice_project18 {
+		    public static void main(String[] args) {
+		    	
+		        // Create objects of different shapes
+		        Circle circle = new Circle("red", 5.0);
+		        Rectangle rectangle = new Rectangle("blue", 4.0, 6.0);
+
+		        // Demonstrate polymorphism
+		        Shape[] shapes = { circle, rectangle };
+
+		        for (Shape shape : shapes) {
+		            shape.display();
+		            System.out.println("Area: " + shape.area());
+		            System.out.println();
+		        }
+		    }
+		}

@@ -1,0 +1,47 @@
+package assistedpractice3;
+
+import java.util.Scanner;
+
+public class Practice_project23 {
+
+	public static void main(String[] args) {
+		// Write a program in Java to find the sum of n number of elements in the range of L and R where 0 <= L <= R <= n-1
+		
+		        Scanner sc = new Scanner(System.in);
+
+		        System.out.print("Enter the number of elements (n): ");
+		        int n = sc.nextInt();
+
+		        int[] arr = new int[n];
+
+		        System.out.println("Enter the elements:");
+		        for (int i = 0; i < n; i++) {
+		            arr[i] = sc.nextInt();
+		        }
+
+		        System.out.print("Enter the left index (L): ");
+		        int L = sc.nextInt();
+
+		        System.out.print("Enter the right index (R): ");
+		        int R = sc.nextInt();
+
+		        int sumInRange = findSumInRange(arr, L, R);
+
+		        System.out.println("Sum of elements in the range [" + L + ", " + R + "] is: " + sumInRange);
+
+		        sc.close();
+		    }
+
+		    public static int findSumInRange(int[] arr, int L, int R) {
+		        if (L < 0 || R >= arr.length) {
+		            throw new IllegalArgumentException("Invalid range indices.");
+		        }
+
+		        int sum = 0;
+		        for (int i = L; i <= R; i++) {
+		            sum += arr[i];
+		        }
+
+		        return sum;
+		    }
+		}

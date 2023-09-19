@@ -1,0 +1,84 @@
+package assistedpractice3;
+
+		// Write a program in Java to insert a new element in a sorted circular linked list
+		
+		class ListNode {
+		    int data;
+		    ListNode next;
+
+		    ListNode(int data) {
+		        this.data = data;
+		        this.next = null;
+		    }
+		}
+
+		class SortedCircularLinkedList {
+		    ListNode head;
+
+		    SortedCircularLinkedList() {
+		        head = null;
+		    }
+
+		    // Insert a new element into the sorted circular linked list
+		    void insert(int newData) {
+		        ListNode newNode = new ListNode(newData);
+
+		        // Case when the list is empty
+		        if (head == null) {
+		            newNode.next = newNode;
+		            head = newNode;
+		            return;
+		        }
+
+		        // Case when the new element should be inserted at the beginning
+		        if (newData < head.data) {
+		            newNode.next = head;
+		            ListNode current = head;
+		            while (current.next != head) {
+		                current = current.next;
+		            }
+		            current.next = newNode;
+		            head = newNode;
+		            return;
+		        }
+
+		        // Insert the new element in its sorted position
+		        ListNode current = head;
+		        while (current.next != head && current.next.data < newData) {
+		            current = current.next;
+		        }
+		        newNode.next = current.next;
+		        current.next = newNode;
+		    }
+
+		    // Display the sorted circular linked list
+		    void display() {
+		        if (head == null) {
+		            System.out.println("The sorted circular linked list is empty.");
+		            return;
+		        }
+
+		        ListNode current = head;
+		        do {
+		            System.out.print(current.data + " ");
+		            current = current.next;
+		        } while (current != head);
+		        System.out.println();
+		    }
+		}
+
+		public class Practice_project26 {
+		    public static void main(String[] args) {
+		        SortedCircularLinkedList list = new SortedCircularLinkedList();
+
+		        // Insert some elements into the sorted circular linked list
+		        list.insert(20);
+		        list.insert(15);
+		        list.insert(1);
+		        list.insert(24);
+		        list.insert(33);
+
+		        System.out.println("Sorted Circular Linked List:");
+		        list.display();
+		    }
+		}

@@ -1,0 +1,39 @@
+package assistedpractice3;
+
+import java.util.Stack;
+import java.util.Scanner;
+
+public class Practice_project28 {
+
+	public static void main(String[] args) {
+		// Write a program in Java to insert and remove elements in a stack
+		     
+		        Scanner sc = new Scanner(System.in);
+		        Stack<Integer> stack = new Stack<>();
+
+		       System.out.println();
+		       	
+		       // Insert (push) elements into the stack
+		        while (true) {
+		            System.out.print("Enter an element (or '0' to stop): ");
+		            int element = sc.nextInt();
+
+		            if (element == 0) {
+		                break; 
+		                }
+
+		            stack.push(element); 
+
+		        System.out.println("\nStack elements after pushing:");
+		        System.out.println(stack);
+		        }
+		        sc.close();
+		        
+		        // Remove (pop) elements from the stack
+		        int poppedElement = stack.pop();
+		        System.out.println("\nPopped element: " + poppedElement);
+		        
+		        System.out.println("\nStack after popping an element:");
+		        System.out.println(stack);
+		    }
+	}

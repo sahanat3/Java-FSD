@@ -1,0 +1,80 @@
+package assistedpractice3;
+
+		// Write a program in Java to traverse a doubly linked list in the forward and backward directions
+		
+		class Node {
+		    int data;
+		    Node next;
+		    Node prev;
+
+		    Node(int data) {
+		        this.data = data;
+		        this.next = null;
+		        this.prev = null;
+		    }
+		}
+
+		class DoublyLinkedList {
+		    Node head;
+
+		    DoublyLinkedList() {
+		        head = null;
+		    }
+
+		    // Insert a new node at the end of the doubly linked list
+		    void insert(int data) {
+		        Node newNode = new Node(data);
+		        if (head == null) {
+		            head = newNode;
+		        } else {
+		            Node current = head;
+		            while (current.next != null) {
+		                current = current.next;
+		            }
+		            current.next = newNode;
+		            newNode.prev = current;
+		        }
+		    }
+
+		    // Traverse the doubly linked list in the forward direction
+		    void forwardTraversal() {
+		        Node current = head;
+		        while (current != null) {
+		            System.out.print(current.data + " ");
+		            current = current.next;
+		        }
+		        System.out.println();
+		    }
+
+		    // Traverse the doubly linked list in the backward direction
+		    void backwardTraversal() {
+		        Node current = head;
+		        while (current.next != null) {
+		            current = current.next;
+		        }
+		        while (current != null) {
+		            System.out.print(current.data + " ");
+		            current = current.prev;
+		        }
+		        System.out.println();
+		    }
+		}
+
+		public class Practice_project27{
+		    public static void main(String[] args) {
+		        DoublyLinkedList list = new DoublyLinkedList();
+
+		        // Insert elements into the doubly linked list
+		        list.insert(1);
+		        list.insert(2);
+		        list.insert(3);
+		        list.insert(4);
+		        list.insert(5);
+
+		        System.out.println("Forward Traversal:");
+		        list.forwardTraversal();
+
+		        System.out.println("Backward Traversal:");
+		        list.backwardTraversal();
+		    }
+		}

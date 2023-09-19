@@ -1,0 +1,29 @@
+package assistedpractice3;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Practice_project29 {
+
+	public static void main(String[] args) {
+		// Write a program in Java to insert and remove elements in a queue
+		
+		        Queue<Integer> queue = new LinkedList<>();
+
+		        // Enqueue elements into the queue
+		        queue.offer(1);
+		        queue.offer(2);
+		        queue.offer(3);
+		        queue.offer(4);
+		        queue.offer(5);
+		        
+		        System.out.println("Queue elements after enqueue:");
+		        System.out.println(queue);
+
+		        // Dequeue elements from the queue
+		        while (!queue.isEmpty()) {
+		            int dequeuedElement = queue.poll();
+		            System.out.println("\nDequeued element: " + dequeuedElement);
+		        }
+		    }
+		}

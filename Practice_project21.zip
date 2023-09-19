@@ -1,0 +1,56 @@
+package assistedpractice3;
+
+		
+public class Practice_project21 {
+	
+    public static void main(String[] args) {
+    	// Write a program in Java to right rotate an array by 5 steps
+    	
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9,10};
+        int rotatesteps = 5;
+
+        System.out.println("Original Array:");
+        printArray(arr);
+
+        rightRotateArray(arr, rotatesteps);
+
+        System.out.println("\nArray after right rotation by " + rotatesteps + " steps:");
+        printArray(arr);
+    }
+
+    public static void rightRotateArray(int[] arr, int steps) {
+        int length = arr.length;
+        
+        // TO check steps are in array length
+        steps = steps % length; 
+        
+        // TO handle negative steps
+        if (steps < 0) {
+            steps = length + steps; 
+        }
+
+        int[] temp = new int[length];
+
+        // Copy the last 'steps' elements to temp
+        for (int i = 0; i < steps; i++) {
+            temp[i] = arr[length - steps + i];
+        }
+
+        // Copy the remaining elements to their new positions
+        for (int i = steps; i < length; i++) {
+            temp[i] = arr[i - steps];
+        }
+
+        // Copy elements from temp back to arr
+        for (int i = 0; i < length; i++) {
+            arr[i] = temp[i];
+        }
+    }
+
+    public static void printArray(int[] arr) {
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+}

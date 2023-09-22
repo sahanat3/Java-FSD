@@ -1,0 +1,70 @@
+package assistedpractice4;
+
+public class Practice_project38 {
+ 
+		public static void quickSort(int[] arr) {
+    	// Writing a program in Java implementing the quick sort algorithm
+		
+	        if (arr == null || arr.length <= 1) {
+	            return;
+	        }
+
+	        int n = arr.length;
+	        sortHelper(arr, 0, n - 1);
+	    }
+
+	    private static void sortHelper(int[] arr, int low, int high) {
+	        if (low < high) {
+	        	
+	            // Partition the array and get the pivot index
+	            int pivotIndex = partition(arr, low, high);
+
+	            // Recursively sort the subarrays before and after the pivot
+	            sortHelper(arr, low, pivotIndex - 1);
+	            sortHelper(arr, pivotIndex + 1, high);
+	        }
+	    }
+
+	    private static int partition(int[] arr, int low, int high) {
+	        int pivot = arr[high]; // Choose the rightmost element as the pivot
+	        int i = low - 1; // Index of the smaller element
+
+	        for (int j = low; j < high; j++) {
+	            // If the current element is smaller than or equal to the pivot
+	            if (arr[j] <= pivot) {
+	                i++;
+
+	                // Swap arr[i] and arr[j]
+	                int temp = arr[i];
+	                arr[i] = arr[j];
+	                arr[j] = temp;
+	            }
+	        }
+
+	        // Swap arr[i+1] and arr[high] (pivot)
+	        int temp = arr[i + 1];
+	        arr[i + 1] = arr[high];
+	        arr[high] = temp;
+
+	        return i + 1;
+	    }
+
+	    public static void main(String[] args) {
+	        int[] arr = {64, 34, 25, 12, 22, 11, 90};
+
+	        System.out.println("Original array:");
+	        printArray(arr);
+
+	        quickSort(arr);
+
+	        System.out.println("Sorted array:");
+	        printArray(arr);
+	    }
+
+	    public static void printArray(int[] arr) {
+	        for (int i = 0; i < arr.length; i++) {
+	            System.out.print(arr[i] + " ");
+	        }
+	        System.out.println();
+	    }
+	}

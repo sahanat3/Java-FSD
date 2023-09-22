@@ -1,0 +1,39 @@
+package assistedpractice4;
+
+import java.util.Arrays;
+
+public class Practice_project33 {
+
+	    public static int exponentialSearch(int[] arr, int target) {
+		// Writing a program in Java implementing the exponential search algorithm
+		
+	    		int n = arr.length;
+		        
+		        // If the target is the first element, return 0
+		        if (arr[0] == target) {
+		            return 0;
+		        }
+		        
+		        // Find the range for binary search
+		        int i = 1;
+		        while (i < n && arr[i] <= target) {
+		            i *= 2;
+		        }
+		        
+		        // Perform binary search in the determined range
+		        return Arrays.binarySearch(arr, i / 2, Math.min(i, n), target);
+		    }
+
+		    public static void main(String[] args) {
+		        int[] arr = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 };
+		        int target = 12;
+		        
+		        int result = exponentialSearch(arr, target);
+		        
+		        if (result >= 0) {
+		            System.out.println("Element found at index " + result);
+		        } else {
+		            System.out.println("Element not found in the array.");
+		        }
+		    }
+		}
